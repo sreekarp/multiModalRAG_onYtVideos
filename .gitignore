@@ -1,0 +1,5 @@
+# Project specific
+backend/.env
+backend/qdrant_data/
+backend/data/
+data
