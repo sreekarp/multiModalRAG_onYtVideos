@@ -4,9 +4,9 @@ This project is a Retrieval-Augmented Generation (RAG) application for YouTube v
 
 ## Architecture
 
-- **Backend**: FastAPI application (runs in Docker).
+- **Backend**: FastAPI application.
 - **Database**: Qdrant vector database (runs in Docker).
-- **Frontend**: Streamlit application (runs locally).
+- **Frontend**: Streamlit application.
 
 ## Prerequisites
 
@@ -18,44 +18,18 @@ This project is a Retrieval-Augmented Generation (RAG) application for YouTube v
 
 ### 1. Start Application (Recommended)
 
-Run the following command in the root directory to build and start the entire application (Backend, Frontend, Database):
-
-```bash
-docker-compose up --build
-```
-
-- **Frontend**: Open `http://localhost:8501` in your browser.
-- **Backend API**: Available at `http://localhost:8000`.
+Run the following steps in the root directory to build and start the entire application (Backend, Frontend, Database):
+1. Run a qdrant server from docker 
 - **Qdrant**: Available at `http://localhost:6333`.
 
-### 2. Run from Docker Hub (Production)
-
-If you want to run the application without building it from source (using published images):
-
-```bash
-docker-compose -f docker-compose.prod.yml up
-```
-
-### 3. Publish Images (For Maintainers)
-
-To build and push the images to Docker Hub (requires login):
-
-```powershell
-./publish_images.ps1
-```
-
-### 4. Local Development (Optional)
-
-If you prefer to run components locally without Docker:
-
-1.  **Backend**:
+2.  **Backend**:
     ```bash
     cd backend
     pip install -r requirements.txt
     uvicorn app.main:app --reload
     ```
 
-2.  **Frontend**:
+3.  **Frontend**:
     ```bash
     pip install streamlit requests
     streamlit run frontend/streamlit_app.py
