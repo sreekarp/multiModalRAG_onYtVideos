@@ -3,3 +3,7 @@ backend/.env
 backend/qdrant_data/
 backend/data/
 data
+
+# Python bytecode
+__pycache__/
+*.py[cod]
